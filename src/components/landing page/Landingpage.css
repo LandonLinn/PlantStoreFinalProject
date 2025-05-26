@@ -1,0 +1,52 @@
+.landing-page-container{
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.coverimg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landingpage-content{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.459);
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title-content{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.title-content hr{
+    width: 50px;
+}
+
+.title-content h1, p {
+    margin: 0px;
+}
+
+.getStartedButton{
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: green;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+}

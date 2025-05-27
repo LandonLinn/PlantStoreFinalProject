@@ -14,7 +14,7 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.459);
+    background-color: rgba(0, 0, 0, 0.658);
     width: 100%;
     height: 100%;
 
@@ -49,4 +49,13 @@
     height: 50px;
     border: none;
     border-radius: 8px;
+}
+
+.about-content{
+    font-size: 1rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

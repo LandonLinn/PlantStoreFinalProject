@@ -1,16 +1,23 @@
-import { useState } from 'react'
 import './App.css'
+import { useContext, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartContext } from './Utils/CartContext';
 
-//Import Components
-import Landingpage from './components/landing page/Landingpage'
-import Productpage from './components/product page/Productpage'
+// Import Components
+import Homepage from './components/homepage/Homepage';
+import Productpage from './components/product page/Productpage';
 
 function App() {
+
+  const { cartCount } = useContext(CartContext);
+
   return (
-    <>
-      <Landingpage />
-      <Productpage />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Homepage />}/>
+        <Route path='/products' element={<Productpage cartCount={cartCount}/>}/>
+      </Routes>
+    </Router>
   )
 }
 

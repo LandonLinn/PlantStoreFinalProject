@@ -1,7 +1,9 @@
 import './Landingpage.css'
+import { Link } from 'react-router-dom';
 
 // Cover Image
 import coverImg from '../../assets/landingpage-img.jpg'
+import Productpage from '../product page/Productpage';
 
 const Landingpage = () => {
     return(
@@ -12,7 +14,7 @@ const Landingpage = () => {
                     <h1>Welcome to <br /> Paradise Nursery</h1>
                     <hr />
                     <p>Where Paradise Meets Serenity</p>
-                    <button className='getStartedButton'>Get Started</button>
+                    <Link to="/products"><button className='getStartedButton'>Get Started</button></Link>
                 </div>
                 <div className='about-content'>
                     <h3>Weclome to Paradise Nursery, where green meets serenity!</h3>

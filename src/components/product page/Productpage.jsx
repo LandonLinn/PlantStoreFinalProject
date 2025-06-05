@@ -1,24 +1,45 @@
 import React from "react";
 import "./Productpage.css";
+import Header from "../header/Header";
+import { CartContext } from "../../Utils/CartContext";
+import { useContext } from 'react';
 
-// import Images
-// import ppngLogo from '../assets/ppn-logo.png';
-// import cartIcon from '../assets/shopping-card.png';
+// Import Product Data
+import { plants } from '../../Utils/plantData';
 
 const Productpage = () => {
+
+    const { cartCount, dispatch } = useContext(CartContext);
+
     return(
         <div className="product-page-container">
-            <nav className="product-page-header">
-                <img src="" alt="" />
-                <h1>Plants</h1>
-                <div className="shopping-cart">
-                    <img src="" alt="" />
-                    <div className="cart-iterator">
-
+            <Header cartCount={cartCount}/>
+            <h1 className="product-page-title">Air Purifying Plants</h1>
+            <div className="product-listings-container">
+                
+                {plants.map((plant, index) => (
+                    <div className="product-card" key={index}>
+                        <div className="sale-container">
+                            <p>SALE</p>
+                        </div>
+                        <h3>{plant.name}</h3>
+                        <img 
+                            src={plant.img} 
+                            alt={plant.name} 
+                            className="product-img"
+                        />
+                        <p className="price">${plant.price}</p>
+                        <em>{plant.desc}</em>
+                        <button 
+                            onClick={() => dispatch({ type: 'ADD_TO_CART' })}
+                            className="cart-button"
+                        >
+                            Add to Cart
+                        </button>
                     </div>
-                </div>
-            </nav>
-            <div className="product-listings">
+                ))}
+                    
+                
 
             </div>
         </div>

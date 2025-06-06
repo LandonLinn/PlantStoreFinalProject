@@ -7,13 +7,13 @@ import { useContext } from 'react';
 // Import Product Data
 import { plants } from '../../Utils/plantData';
 
-const Productpage = () => {
+const Productpage = ({onCartClick}) => {
 
     const { cartCount, dispatch } = useContext(CartContext);
 
     return(
         <div className="product-page-container">
-            <Header cartCount={cartCount}/>
+            <Header cartCount={cartCount} onCartClick={onCartClick}/>
             <h1 className="product-page-title">Air Purifying Plants</h1>
             <div className="product-listings-container">
                 

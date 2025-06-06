@@ -1,7 +1,11 @@
 import './Header.css';
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Utils/CartContext';
+
+import Cartpage from '../cart/Cartpage';
+
 
 // Import Functions
 import { toTop } from '../../Utils/utils';
@@ -10,9 +14,10 @@ import { toTop } from '../../Utils/utils';
 import logo from '../../assets/ppn-logo.png';
 import cart from '../../assets/shopping-cart.png';
 
-const Header = () => {
+const Header = ({ onCartClick }) => {
 
     const {cartCount, dispatch} = useContext(CartContext);
+    const [showCart, setShowCart] = useState(true);
 
     return(
         <header>
@@ -29,13 +34,15 @@ const Header = () => {
                     </div>
                 
 
-                <div className="shopping-cart">
+                <div className="shopping-cart" onClick={() => setShowCart(true)}>
                     <img src={cart} className="cart-icon" alt="Cart icon" />
                     <div className='cart-counter'>
                         <p>{cartCount}</p>
                     </div>
                 </div>
             </div>
+
+            {showCart && <Cartpage onClose={() => setShowCart(false)} />}
         </header>
     )   
 }

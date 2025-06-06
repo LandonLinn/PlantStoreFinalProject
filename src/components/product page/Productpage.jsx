@@ -31,7 +31,7 @@ const Productpage = ({onCartClick}) => {
                         <p className="price">${plant.price}</p>
                         <em>{plant.desc}</em>
                         <button 
-                            onClick={() => dispatch({ type: 'ADD_TO_CART' })}
+                            onClick={() => dispatch({ type: 'ADD_TO_CART', payload: plant })}
                             className="cart-button"
                         >
                             Add to Cart

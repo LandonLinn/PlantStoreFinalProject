@@ -28,7 +28,7 @@ header{
     height: 100%;
 }
 
-.full-logo > div > h2, p, a{
+.full-logo > div > p, h2, a{
     margin: 0px;
     color: white;
     text-decoration: none;
@@ -49,6 +49,10 @@ header{
 .shopping-cart{
     height: 100%;
     position: relative;
+}
+
+.shopping-cart:hover{
+    cursor: pointer;
 }
 
 .cart-counter{

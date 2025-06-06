@@ -14,10 +14,10 @@ import { toTop } from '../../Utils/utils';
 import logo from '../../assets/ppn-logo.png';
 import cart from '../../assets/shopping-cart.png';
 
-const Header = ({ onCartClick }) => {
+const Header = () => {
 
     const {cartCount, dispatch} = useContext(CartContext);
-    const [showCart, setShowCart] = useState(true);
+    const [showCart, setShowCart] = useState(false);
 
     return(
         <header>
